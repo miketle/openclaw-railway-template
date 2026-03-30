@@ -10,7 +10,9 @@ RUN apt-get update \
     python3 \
     build-essential \
     zip \
+    libnss3 \
     libnspr4 \
+    libnss3 \
     libatk1.0-0 \
     libatk-bridge2.0-0 \
     libcups2 \
