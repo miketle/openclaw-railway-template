@@ -25,7 +25,6 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 RUN npm install -g openclaw@2026.3.28 clawhub@latest
-RUN npx playwright install chromium
 
 WORKDIR /app
 
@@ -42,6 +41,7 @@ RUN useradd -m -s /bin/bash openclaw \
 
 USER openclaw
 RUN NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+RUN npx playwright install chromium
 
 ENV PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:${PATH}"
 ENV HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
